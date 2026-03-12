@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Lab 4</title>
+</head>
+<body>
+<script>
+ window.alert("Welcome to the store!");
+ var input,item_id, item_amt, name, time;
+ const items = ["blocks","bars","bricks","balls","bowls"]
+ name = window.prompt("Please enter your name:","");
+ input = window.prompt("What item would you like to order? (enter number)\n1. Blocks\n2. Bars\n3. Bricks\n4. Balls\n5. Bowls","");
+ item_id = parseInt(input);
+ input = window.prompt("How many would you like to order? (enter number)","");
+ item_amt = parseInt(input);
+ time = new Date();
+ if (time.getHours()<12){
+  document.write("<h1> Good morning ")}
+ else if (time.getHours()<18){
+  document.write("<h1> Good afternoon ")}
+ else {
+  document.write("<h1> Good evening ")}
+ document.write(name+", thank you for ordering!</h1>");
+ document.write("<h2>Order Summary:</h2>"+"<h2>"+item_amt+" "+items[item_id-1]+"</h2>");
+ time.setTime(time.getTime()+7*24*60*60*1000);
+ document.write("<h2>Your items will arrive on "+time+"</h2>");
+</script>
+</body>
+</html>
